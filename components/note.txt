@@ -1,0 +1,3 @@
+<!-- metadata: chính xác ở định dạng YAMI -->
+
+<!-- md viêt tắt của Markdown => tệp này dùng để viết markdown  -->

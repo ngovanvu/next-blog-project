@@ -1,9 +1,7 @@
-import FeaturedPost from "@/components/home-page/featured-post";
-import Hero from "@/components/home-page/hero";
-import { getFeaturedPosts } from "@/lib/posts-util";
+import AllPosts from "@/components/posts/all-posts";
+import { getAllPosts } from "@/lib/posts-util";
 import Head from "next/head";
 import { Fragment } from "react";
-
 // const DYMMY_POSTS = [
 //   {
 //     title: "Stating nextjs",
@@ -34,29 +32,24 @@ import { Fragment } from "react";
 //     slug: "getting-started-with-nextjs4",
 //   },
 // ];
-
-const HomePage = (props) => {
+const AllPostPage = (props) => {
   return (
     <Fragment>
       <Head>
-        <title>TOM' Blog</title>
-        <meta name="description" content="i post about programming and web development." />
-        
+        <title>All posts</title>
+        <meta name="description" content="a list of all programming-related tutorials and posts!" />
       </Head>
-      <Hero />
-      <FeaturedPost posts={props.posts} />
+      <AllPosts posts={props.posts} />
     </Fragment>
   );
 };
-
 export function getStaticProps() {
-  const featuredPost = getFeaturedPosts();
-  console.log(featuredPost);
+  const featuredPost = getAllPosts();
+  // console.log(featuredPost);
   return {
     props: {
       posts: featuredPost,
     },
   };
 }
-
-export default HomePage;
+export default AllPostPage;
